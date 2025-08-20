@@ -1,14 +1,13 @@
 package com.penguin.floor
+
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-//import com.penguin.floor.Venue
-
 import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
 
 @Entity(
-    tableName = "Floors",
+    tableName = "floors",
     foreignKeys = [
         ForeignKey(
             entity = Venue::class,
@@ -22,18 +21,17 @@ import androidx.room.PrimaryKey
 data class Floor(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "Id")
-    val id: Int = 0,
+    var id: Int? = null,
 
     @ColumnInfo(name = "Name")
-    val name: String,
+    var name: String,
 
     @ColumnInfo(name = "Level")
-    val level: Int,
+    var level: Int,
 
     @ColumnInfo(name = "IsDeleted")
-    val isDeleted: Boolean,
+    var isDeleted: Boolean,
 
     @ColumnInfo(name = "VenueId")
-    val venueId: Int
+    var venueId: Int
 )
-

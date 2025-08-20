@@ -1,11 +1,11 @@
+package com.penguin.floor.local
+
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "floors")
-data class FloorEntity(
+@Entity(tableName = "venues")
+data class VenueEntity(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val name: String = "",
-    val level: Int = 0,
-    val venueId: Int = 0,
-    val isDeleted: Boolean = false
+    val location: String = ""
 )

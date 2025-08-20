@@ -1,86 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="20dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    android:layout_margin="32dp">
 
     <TextView
         android:id="@+id/floorText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="Floor ID : "
-        android:textSize="18sp"
+        android:text="Floor ID: "
+        android:textSize="16sp"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/floorIdText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
         android:text="1845"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/floorText"
-        app:layout_constraintTop_toTopOf="@+id/floorText" />
-
-
+        android:textSize="16sp"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@id/floorText"
+        app:layout_constraintTop_toTopOf="@id/floorText"/>
 
     <TextView
         android:id="@+id/venueText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="Venue ID :"
-        android:textSize="18sp"
+        android:text="Venue ID: "
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/floorText" />
+        app:layout_constraintTop_toBottomOf="@id/floorText"/>
 
     <TextView
         android:id="@+id/venueIdText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
         android:text="1236"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/venueText"
-        app:layout_constraintTop_toTopOf="@+id/venueText"
-        app:layout_constraintBottom_toBottomOf="@+id/venueText" />
-
+        android:textSize="16sp"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@id/venueText"
+        app:layout_constraintTop_toTopOf="@id/venueText"/>
 
     <TextView
         android:id="@+id/textViewFloorLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="Floor Name:"
-        android:textSize="18sp"
+        android:text="Floor Name: "
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/venueText" />
+        app:layout_constraintTop_toBottomOf="@id/venueText"/>
 
     <TextView
         android:id="@+id/textViewFloorValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Main Floor"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@id/textViewFloorLabel"
+        app:layout_constraintTop_toTopOf="@id/textViewFloorLabel"
+        app:layout_constraintEnd_toStartOf="@id/btnUpdate"
+        app:layout_constraintHorizontal_bias="0"/>
+
+    <Button
+        android:id="@+id/btnUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:text="Main Floor"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textViewFloorLabel"
-        app:layout_constraintTop_toTopOf="@+id/textViewFloorLabel"
-        app:layout_constraintBottom_toBottomOf="@+id/textViewFloorLabel" />
+        android:text="Update"
+        app:layout_constraintTop_toTopOf="@id/textViewFloorValue"
+        app:layout_constraintEnd_toStartOf="@id/btnDelete"
+        android:layout_marginEnd="8dp"/>
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        app:layout_constraintTop_toTopOf="@id/textViewFloorValue"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <View
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="#000000"
+        android:background="#CCCCCC"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFloorLabel" />
-
+        app:layout_constraintTop_toBottomOf="@id/textViewFloorValue"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-

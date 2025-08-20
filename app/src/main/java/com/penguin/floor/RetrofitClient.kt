@@ -3,12 +3,14 @@ package com.penguin.floor.remote
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object RetrofitClient {
-    val instance: Retrofit by lazy {
+object RetrofitInstance {
+    private const val BASE_URL = "http://192.168.5.28/database/"
+
+    val api: ServiceApi by lazy {
         Retrofit.Builder()
-            .baseUrl("http://192.168.5.28/database/") // بدون api/floors هنا
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-
+            .create(ServiceApi::class.java)
     }
 }
